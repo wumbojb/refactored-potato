@@ -34,14 +34,25 @@ Consectetur irure aute consectetur [Callout](/callout/) ex ad ex cupidatat eiusm
 
 # Hello World
 
-{{< col-begin col=fluid >}}
-{{< col >}}
-Consectetur minim eu officia adipisicing veniam ad. Mollit culpa ut minim nisi laborum excepteur sit ea occaecat consectetur aliquip occaecat. Consequat laboris dolore nulla fugiat non aute non. Commodo do veniam adipisicing quis nostrud mollit non id excepteur dolor consectetur dolor ullamco. Eu mollit cillum ad veniam aliqua magna dolore. Cupidatat ad ullamco adipisicing proident consectetur minim eiusmod nisi.
+{{< col col=col-2 >}}
+#### Title 1
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+
+<--->
+
+#### Title 2
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+
+<--->
+
+#### Title 3
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s[^columntest]
+
 {{< /col >}}
-{{< col >}}
-![Image](/images/testing.jpeg "Contoh Apa Ini Entahlah [Coba Google](https://google.com)|link=/images/testing.jpeg")
-{{< /col >}}
-{{< /col-begin >}}
+
 In proident sint eiusmod occaecat do exercitation ullamco excepteur eu. Tempor ad est duis irure nostrud in fugiat culpa aliqua ullamco ex consectetur. Amet magna amet nulla reprehenderit.
 
 
