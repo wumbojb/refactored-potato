@@ -1,0 +1,83 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
+
+html {
+  @include m.custom-scrollbar(var(--base-border), var(--primary));
+  overflow-x: hidden;
+  font-size: v.$fs-base;
+  background-color: var(--second-bg);
+  color: var(--base-color);
+}
+
+#viewPage {
+  font-size: var(--md-font-default);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #viewPage,
+  #viewPage * {
+    visibility: visible;
+  }
+}
+
+.sr-only {
+  @include m.visually-hidden();
+}
+
+@include b.min(md) {
+  .float-left {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .float-right {
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+
+  &--col-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  &--col-5 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @include b.min(md) {
+    &--col-3 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    &--col-4 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    &--col-5 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @include b.min(lg) {
+    &--col-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    &--col-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    &--col-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    &--col-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}

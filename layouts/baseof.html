@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}">
+<html lang="{{ site.Language.LanguageCode }}" data-theme="dark">
 <head>
   {{ partial "head/inline-script" . }}
   {{ partial "head/inline-css" . }}
@@ -8,7 +8,7 @@
   {{ partial "head/sass" . }}
 </head>
 <body>
-  {{- partial "mobile-header.html" . }}
+  {{- partial "header.html" . }}
   {{- partial "sidebar.html" . }}
   <main class="main">
     {{- partial "view-control.html" . }}

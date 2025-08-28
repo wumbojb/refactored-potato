@@ -20,7 +20,6 @@
 {{- with resources.Get $path | resources.Minify -}}
   {{- $svg := .Content | safeHTML -}}
 
-  {{/* tambahin atribut dinamis */}}
   {{- if $class }}
     {{- $svg = $svg | replaceRE `<svg` (printf `<svg class="%s"` $class) -}}
   {{- end -}}
