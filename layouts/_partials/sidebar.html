@@ -18,7 +18,7 @@
   <nav class="nav">
     <strong class="nav__label">Main Menu</strong>
     {{- range site.Menus.main }}
-      <a href="{{ .URL }}" class="nav__link">{{ .Name }}</a>
+      <a href="{{ .URL | relURL }}" class="nav__link">{{ .Name }}</a>
     {{- end }}
   </nav>
 

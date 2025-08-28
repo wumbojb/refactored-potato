@@ -3,6 +3,7 @@ languageCode: id
 title: My Notes
 timeZone: Asia/Jakarta
 enableEmoji: true
+enableGitInfo: true
 
 mediaType: 'application/json'
 outputFormats:
