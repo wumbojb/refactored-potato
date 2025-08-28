@@ -1,0 +1,32 @@
+main:
+  - name: Home
+    pageRef: /
+    weight: 10
+  - name: Recent Change
+    pageRef: /recent-change/
+    weight: 20
+  - name: Random Page
+    url: random-page.html
+    weight: 30
+  - name: Tags
+    pageRef: /tags/
+
+social:
+  - name: Twitter X
+    url: https://example.com/
+    weight: 10
+  - name: Instagram
+    url: https://example.com/
+    weight: 20
+  - name: Facebook
+    url: https://example.com/
+    weight: 30
+  - name: Discord
+    url: https://example.com/
+    weight: 40
+  - name: Github
+    url: https://example.com/
+    weight: 50
+  - name: Rss Feed
+    url: index.xml
+    weight: 50

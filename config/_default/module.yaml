@@ -1,0 +1,16 @@
+hugoVersion:
+  extended: true
+  min: "0.148.1"
+
+mounts:
+  # CONTENT
+  - source: notes
+    target: content
+  - source: content
+    target: content
+
+  # ASSETS
+  - source: node_modules/bootstrap-icons/icons
+    target: assets/icons
+  - source: assets
+    target: assets

@@ -1,0 +1,58 @@
+author: Putra Jaya
+description: "Consectetur occaecat ut aute sint aliqua pariatur in nisi commodo."
+logo: images/logo.png
+images:
+  - images/logo.png
+  - images/default-image.png
+social:
+  facebook_admin: mpw
+  twitter: Masputrawae
+
+defaultDiscussion: true
+defaultEditPage: true
+defaultMath: false
+
+ghrepo: masputrawae/masputrawae.github.io
+branch: main
+
+#===================
+# GISCUS SETTING
+#===================
+giscusConfig:
+  dataRepo: "masputrawae/masputrawae.github.io"
+  dataRepoId: "R_kgDOPTix1Q"
+  dataCategory: "General"
+  dataCategoryId: "DIC_kwDOPTix1c4Ctd3E"
+  dataMapping: "og:title"
+  dataStrict: 1
+  dataReactionsEnabled: 1
+  dataEmitMetadata: 1
+  dataInputPosition: "top"
+
+#===================
+# FAVICONS SETTING
+#===================
+favicons:
+  - rel: icon
+    type: image/x-icon
+    href: favicons/favicon.ico
+  - rel: apple-touch-icon
+    type: image/png
+    size: 180x180
+    href: favicons/apple-touch-icon.png
+  - rel: icon
+    type: image/png
+    size: 32x32
+    href: favicons/favicon-32x32.png
+  - rel: icon
+    type: image/png
+    size: 16x16
+    href: favicons/favicon-16x16.png
+  - rel: icon
+    type: image/png
+    size: 192x192
+    href: favicons/android-chrome-192x192.png
+  - rel: icon
+    type: image/png
+    size: 512x512
+    href: favicons/android-chrome-512x512.png
