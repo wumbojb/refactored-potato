@@ -1,0 +1,19 @@
+baseURL: https://masputrawae.github.io/
+languageCode: id
+title: Testing Only
+timeZone: Asia/Jakarta
+enableEmoji: true
+
+menu:
+  main:
+    - name: Home
+      pageRef: /
+      weight: 10
+    - name: Recent Change
+      pageRef: /recent-change/
+      weight: 20
+    - name: Random Page
+      url: random-page.html
+      weight: 30
+    - name: Tags
+      pageRef: /tags/

@@ -1,0 +1,36 @@
+<header class="sidebar">
+  <figure class="brand">
+    <img src="https://placehold.co/100" alt="Logo {{ site.Title }}" class="brand__logo">
+    <figcaption class="brand__title">{{ site.Title }}</figcaption>
+  </figure>
+
+  <nav class="nav">
+    <strong class="nav__label">Main Menu</strong>
+    {{- range site.Menus.main }}
+      <a href="{{ .URL }}" class="nav__item">{{ .Name }}</a>
+    {{- end }}
+  </nav>
+
+  {{ partial "components/radio-group.html" (dict
+      "label" "Themes"
+      "name" "theme"
+      "checked" "auto"
+      "options" (slice
+          (dict "value" "auto" "text" "Auto")
+          (dict "value" "light" "text" "Light")
+          (dict "value" "dark" "text" "Dark")
+      )
+  ) }}
+
+  {{ partial "components/radio-group.html" (dict
+      "label" "Font Size"
+      "name" "font-size"
+      "checked" "14"
+      "options" (slice
+          (dict "value" "12" "text" "Small")
+          (dict "value" "14" "text" "Default")
+          (dict "value" "16" "text" "Large")
+          (dict "value" "18" "text" "Extra Large")
+      )
+  ) }}
+</header>

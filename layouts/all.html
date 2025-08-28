@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+<head>
+</head>
+<body>
+  {{ partial "mobile-header.html" . }}
+  {{ partial "sidebar.html" . }}
+  <main class="main">
+    {{ partial "components/view-control.html" . }}
+    {{ .Content }}
+    {{ partial "components/discussion.html" . }}
+    {{ partial "components/history.html" . }}
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+</html>

@@ -1,0 +1,9 @@
+<div class="nav">
+  <strong class="nav__label">{{ .label }}</strong>
+  {{ range .options }}
+    <label class="nav__link nav__link--radio">
+      <input type="radio" name="{{ $.name }}" value="{{ .value }}" {{ if eq $.checked .value }}checked{{ end }}/>
+      <span>{{ .text }}</span>
+    </label>
+  {{ end }}
+</div>
