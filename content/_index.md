@@ -4,7 +4,7 @@ title: Home
 
 Irure sint sit nulla et. Consequat Lorem exercitation aliquip tempor pariatur aute incididunt officia laboris. Nisi mollit occaecat exercitation velit non do excepteur non.
 
-Consectetur irure aute consectetur ex ad ex cupidatat eiusmod tempor. Commodo cupidatat dolor exercitation duis commodo dolor. Consequat sit consequat sit occaecat amet id aute ex excepteur velit aute dolore nisi. Adipisicing aliqua ea amet culpa Lorem sit nulla dolor.
+Consectetur irure aute consectetur [Callout](/callout/) ex ad ex cupidatat eiusmod tempor. Commodo cupidatat dolor exercitation duis commodo dolor. Consequat sit consequat sit occaecat amet id aute ex excepteur velit aute dolore nisi. Adipisicing aliqua ea amet culpa Lorem sit nulla dolor.
 
 __Advertisement :)__
 
