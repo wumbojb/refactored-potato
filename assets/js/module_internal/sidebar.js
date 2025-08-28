@@ -10,8 +10,10 @@ export const sidebarHandler = () => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
 
-      $$("[id]").forEach((sb) => sb.classList.remove("is-active"));
-      sidebar.classList.add("is-active");
+      $$(".is-active").forEach((el) => {
+        if (el !== sidebar) el.classList.remove("is-active");
+      });
+      sidebar.classList.toggle("is-active");
     });
 
     document.addEventListener("click", (e) => {
