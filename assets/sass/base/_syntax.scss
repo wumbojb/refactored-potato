@@ -9,8 +9,8 @@
 code:not(pre code) {
   font-size: v.$fs-sm;
   background-color: var(--second-bg);
-  padding-inline: 0.25rem;
-  border-radius: 0.25rem;
+  padding-inline: 0.25em;
+  border-radius: 0.25em;
   border: 1px solid var(--base-border);
 }
 
@@ -23,33 +23,29 @@ code:not(pre code) {
 
   pre {
     @include m.custom-scrollbar(var(--base-border), var(--primary));
-    padding: 1rem;
-    margin-block: 3rem;
+    padding: 0.75em;
+    margin-block: 1em;
     background-color: var(--second-bg);
     border: 1px solid var(--base-border);
     box-shadow: var(--color-shadow-default);
-    overflow-x: scroll;
-  }
+    overflow-x: auto;
 
-  code::after {
-    content: "📑 Copy";
-    cursor: copy;
-    border: 1px solid var(--base-border);
-    padding: 0.25rem 0.75rem;
-    margin-top: 1rem;
-    display: inline-block;
-    text-align: end;
-    background-color: var(--third-bg);
-    font-size: 80%;
-    border-radius: 0.25rem;
-    position: absolute;
-    inset-inline-end: 0em;
-    inset-block-start: 0em;
-  }
+    code::after {
+      content: "📑 Copy";
+      cursor: copy;
+      border: 1px solid var(--base-border);
+      padding: 0.25em 0.75em;
+      margin-top: 2em;
+      display: inline-block;
+      background-color: var(--third-bg);
+      font-size: 80%;
+      border-radius: 0.25em;
+    }
 
-  &.copied code::after {
-    content: "✅ Copied";
-    color: var(--success);
+    &.copied code::after {
+      content: "✅ Copied";
+      color: var(--success);
+    }
   }
 }
 
