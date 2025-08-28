@@ -1,12 +1,33 @@
 import { $$, byId } from "js/helper";
 
 export const sidebarHandler = () => {
-  $$("[data-sidebar]").forEach((btn) => {
-    const targetId = btn.getAttribute("data-sidebar")
-    const sidebar = byId(targetId)
+  const sidebars = $$("[data-sidebar]");
+
+  sidebars.forEach((btn) => {
+    const targetId = btn.getAttribute("data-sidebar");
+    const sidebar = byId(targetId);
 
     btn.addEventListener("click", (e) => {
-      sidebar.classList.toggle("is-active");
+      e.stopPropagation();
+
+      $$("[id]").forEach((sb) => sb.classList.remove("is-active"));
+      sidebar.classList.add("is-active");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        sidebar.classList.contains("is-active") &&
+        !sidebar.contains(e.target) &&
+        !e.target.closest("[data-sidebar]")
+      ) {
+        sidebar.classList.remove("is-active");
+      }
+    });
+
+    $$("a, button", sidebar).forEach((el) => {
+      el.addEventListener("click", () => {
+        sidebar.classList.remove("is-active");
+      });
     });
   });
 };
