@@ -2,9 +2,28 @@
 title: Home
 ---
 
+Non aliqua aliqua do pariatur occaecat reprehenderit tempor qui. Laborum ullamco minim nulla deserunt nulla Lorem fugiat quis consequat nulla amet. Pariatur est incididunt officia deserunt voluptate ipsum ut fugiat dolor consectetur esse duis. Eiusmod ipsum id dolore duis reprehenderit in duis id elit magna ex veniam nostrud. Occaecat Lorem proident sint dolor eiusmod. Pariatur enim ad do in laborum quis Lorem et ut.
+
+{{< infobox float=right width=360 image=`![Image](/images/testing.jpeg "Contoh Apa Ini Entahlah [Coba Google](https://google.com)|link=/images/testing.jpeg")` >}}
+
+Excepteur aliqua est in fugiat veniam nisi velit ipsum exercitation exercitation et fugiat tempor fugiat. Non irure exercitation eu cupidatat eiusmod dolore nisi pariatur aute anim amet aliquip duis mollit. Amet cupidatat qui adipisicing ea eu aliquip id in in cupidatat magna mollit.
+
+{{< /infobox >}}
 Irure sint sit nulla et. Consequat Lorem exercitation aliquip tempor pariatur aute incididunt officia laboris. Nisi mollit occaecat exercitation velit non do excepteur non.
 
 Consectetur irure aute consectetur [Callout](/callout/) ex ad ex cupidatat eiusmod tempor. Commodo cupidatat dolor exercitation duis commodo dolor. Consequat sit consequat sit occaecat amet id aute ex excepteur velit aute dolore nisi. Adipisicing aliqua ea amet culpa Lorem sit nulla dolor.
+
+# Hello World
+
+{{< col-begin col=fluid >}}
+{{< col >}}
+Consectetur minim eu officia adipisicing veniam ad. Mollit culpa ut minim nisi laborum excepteur sit ea occaecat consectetur aliquip occaecat. Consequat laboris dolore nulla fugiat non aute non. Commodo do veniam adipisicing quis nostrud mollit non id excepteur dolor consectetur dolor ullamco. Eu mollit cillum ad veniam aliqua magna dolore. Cupidatat ad ullamco adipisicing proident consectetur minim eiusmod nisi.
+{{< /col >}}
+{{< col >}}
+![Image](/images/testing.jpeg "Contoh Apa Ini Entahlah [Coba Google](https://google.com)|link=/images/testing.jpeg")
+{{< /col >}}
+{{< /col-begin >}}
+In proident sint eiusmod occaecat do exercitation ullamco excepteur eu. Tempor ad est duis irure nostrud in fugiat culpa aliqua ullamco ex consectetur. Amet magna amet nulla reprehenderit.
 
 __Advertisement :)__
 

@@ -1,6 +1,12 @@
 <header class="sidebar" id="sidebar">
   <figure class="brand">
-    <img src="https://placehold.co/100" alt="Logo {{ site.Title }}" class="brand__logo">
+    {{ $img := site.Params.logo }}
+    {{ $filter := images.Process "resize 100x q100 webp" }}
+    {{ with resources.Get $img }}
+      {{ with . | images.Filter $filter }}
+        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="Logo {{ site.Title }}" class="brand__logo">
+      {{ end }}
+    {{ end }}
     <figcaption class="brand__title">{{ site.Title }}</figcaption>
   </figure>
 

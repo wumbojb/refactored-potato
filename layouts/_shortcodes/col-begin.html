@@ -1,0 +1,3 @@
+<div class="grid grid--{{ .Get "col" | default "col-2" }}">
+  {{ .Inner | strings.TrimSpace | .Page.RenderString | markdownify }}
+</div>

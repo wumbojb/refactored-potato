@@ -1,23 +1,87 @@
-{{- $u := urls.Parse .Destination -}}
-{{- $src := $u.String -}}
-{{- if not $u.IsAbs -}}
-  {{- $path := strings.TrimPrefix "./" $u.Path -}}
-  {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
-    {{- $src = .RelPermalink -}}
-    {{- with $u.RawQuery -}}
-      {{- $src = printf "%s?%s" $src . -}}
+{{- $image_sizes := slice "420" "789" "1019" "1430" "2048" -}}
+{{- $image_quality := "Lanczos" -}}
+{{- $alt := .Text -}}
+{{- $label := .Text -}}
+{{- $caption := "" -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- $class := "" -}}
+{{- $link := "" -}}
+
+{{- if ne .Title "" -}}
+  {{- $parts := split .Title "|" -}}
+  {{- $caption = index $parts 0 | $.Page.RenderString -}}
+  {{- $label = $caption -}}
+  {{- range $parts -}}
+    {{- if strings.HasPrefix . "width=" -}}
+      {{- $width = replace . "width=" "" -}}
     {{- end -}}
-    {{- with $u.Fragment -}}
-      {{- $src = printf "%s#%s" $src . -}}
+    {{- if strings.HasPrefix . "height=" -}}
+      {{- $height = replace . "height=" "" -}}
+    {{- end -}}
+    {{- if strings.HasPrefix . "class=" -}}
+      {{- $class = replace . "class=" "" -}}
+    {{- end -}}
+    {{- if strings.HasPrefix . "link=" -}}
+      {{- $link = replace . "link=" "" -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
-<img src="{{ $src }}" alt="{{ .PlainText }}"
-  {{- with .Title }} title="{{ . }}" {{- end -}}
-  {{- range $k, $v := .Attributes -}}
-    {{- if $v -}}
-      {{- printf " %s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr -}}
-    {{- end -}}
+
+{{- $image := .Page.Resources.GetMatch .Destination -}}
+{{- if and (not $image) .Page.File -}}
+  {{- $image = resources.Get (path.Join .Page.File.Dir .Destination) -}}
+{{- else -}}
+  {{- $image := resources.Get $image -}}
+{{- end -}}
+
+{{- with $image -}}
+  {{- $image_width := $image.Width -}}
+  {{- $image_height := $image.Height -}}
+  {{- if strings.Contains $image "_2x" -}}
+    {{- $image_width = math.Floor (math.Div $image_width 2) -}}
+    {{- $image_height = math.Floor (math.Div $image_height 2) -}}
   {{- end -}}
->
-{{- /**/ -}}
+  {{- $fallback_image := ($image.Resize (print "789x jpg " $image_quality)) -}}
+
+<figure role="figure" aria-label="{{- $label | plainify -}}" class="figure {{ $class }}">
+  {{ with $link }}<a href="{{ . }}">{{ end }}
+  <img
+    alt="{{- $caption | markdownify | plainify -}}"
+    title="{{- $label | plainify -}}"
+    {{ if $width }}width="{{ $width }}"{{ else }}width="{{ $image_width }}"{{ end }}
+    {{ if $height }}height="{{ $height }}"{{ else }}height="{{ $image_height }}"{{ end }}
+    {{- if (or (strings.HasSuffix $image ".gif") (strings.HasSuffix $image ".svg")) -}}
+      src="{{- $image.RelPermalink -}}"
+    {{- else -}}
+      srcset="
+        {{- if le $image.Width (index $image_sizes 0) }}
+          {{- with $image.Resize (print $image.Width "x webp " $image_quality) -}}
+            {{- print .RelPermalink " " .Width "w, " -}}
+          {{- end -}}
+        {{- end -}}
+        {{- with $image_sizes -}}
+          {{- range $index, $size := . -}}
+            {{- if ge $image.Width $size -}}
+              {{- with $image.Resize (print $size "x webp " $image_quality) -}}
+                {{- print .RelPermalink " " $size "w, " -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}"
+        sizes="(min-width: 800px) 50vw, 100vw"
+        src="{{- $fallback_image.RelPermalink -}}"
+    {{- end -}}
+    {{- if strings.Contains $image "featured" -}}
+      loading="eager"
+      decoding="sync"
+    {{- else -}}
+      decoding="async"
+      loading="lazy"
+    {{- end -}}
+    class="figure__image"
+  />{{ with $link }}</a>{{ end }}{{/*  END IMAGE  */}}
+  <figcaption class="figure__caption">{{- $caption -}}</figcaption>
+</figure>
+{{- end -}}
+

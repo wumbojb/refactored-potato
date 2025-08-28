@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+.figure {
+  padding: 0.5em;
+  background-color: var(--third-bg);
+  width: fit-content;
+  box-shadow: var(--base-shadow);
+  border: 1px solid var(--base-border);
+
+  &__image {
+    border: 2px solid var(--base-border);
+  }
+
+  &__caption {
+    font-size: v.$fs-sm;
+    color: var(--third-color);
+    margin-block: 0.5em;
+  }
+}
+
+.infobox {
+  padding: 1em;
+  background-color: var(--third-bg);
+  box-shadow: var(--base-shadow);
+  border: 1px solid var(--base-border);
+  font-size: v.$fs-sm;
+  color: var(--third-color);
+  display: grid;
+  gap: 1em;
+}

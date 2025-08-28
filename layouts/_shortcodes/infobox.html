@@ -1,0 +1,4 @@
+<aside class="infobox float-{{ .Get "float" }}" style="max-width: {{ .Get "width" | default 200 }}px;">
+  {{ .Get "image" | markdownify }}
+  {{- .Inner | strings.TrimSpace | .Page.RenderString | markdownify }}
+</aside>
