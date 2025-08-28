@@ -4,7 +4,7 @@
 
 .header {
   @include m.flex-justify(space-between, center);
-  height: 4rem;
+  height: 4em;
   border-bottom: 1px solid var(--base-border);
   box-shadow: var(--base-shadow);
   padding-inline: 1.5em;
@@ -13,18 +13,40 @@
     font-size: v.$fs-10xl;
     font-family: v.$font-serif;
   }
+
+  &__control {
+    @include m.flex-justify(center, center);
+    gap: 1rem;
+  }
 }
 
+// ========= START SIDEBAR =========
 .sidebar {
+  @include m.custom-scrollbar(var(--base-border), var(--primary));
+  @include m.transition(visibility, transform);
   position: fixed;
   top: 0;
   left: 0;
   height: 100dvh;
   width: 15em;
   padding: 1em;
+  overflow-y: auto;
 
   background-color: var(--second-bg);
   border-right: 1px solid var(--base-border);
+
+  transform: translateX(-100%);
+  visibility: hidden; 
+  &__close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  &.is-active {
+    transform: translateX(0%);
+    visibility: visible;
+  }
 }
 
 // BRAND 
@@ -40,8 +62,9 @@
 
   &__title {
     color: var(--second-color);
+    font-family: v.$font-serif;
     font-size: v.$fs-10xl;
-
+    text-shadow: var(--second-text-shadow);
   }
 }
 
@@ -59,5 +82,48 @@
     color: var(--primary);
     display: flex;
     gap: 0.5rem;
+    padding: 0.1em;
+    font-size: v.$fs-sm;
+  }
+}
+
+// ========= END SIDEBAR =========
+
+.view-control {
+  @include m.transition(visibility, transform);
+  position: absolute;
+  right: 0;
+  top: 3.9em;
+  border: 1px solid var(--base-border);
+  transform: translateX(100%);
+  visibility: hidden;
+  
+  &.is-active {
+    transform: translateX(1px);
+    visibility: visible;
+  }
+
+  &__col {
+    display: grid;
+    background-color: var(--second-bg);
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: end;
+    padding: 0.25em 0.75em;
+    color: var(--primary);
+
+    &--is-active {
+      color: var(--second-color);
+    }
+  }
+}
+
+.view-content {
+  display: none;
+
+  &--is-active {
+    display: block;
   }
 }

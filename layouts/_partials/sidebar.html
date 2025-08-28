@@ -1,8 +1,13 @@
-<header class="sidebar">
+<header class="sidebar" id="sidebar">
   <figure class="brand">
     <img src="https://placehold.co/100" alt="Logo {{ site.Title }}" class="brand__logo">
     <figcaption class="brand__title">{{ site.Title }}</figcaption>
   </figure>
+
+  <button class="sidebar__close-btn" data-sidebar="sidebar">
+    <span class="sr-only">Close Sidebar Button</span>
+    {{ partial "components/icon.html" (dict "name" "x" "width" 24 "height" 24) }}
+  </button>
 
   <nav class="nav">
     <strong class="nav__label">Main Menu</strong>

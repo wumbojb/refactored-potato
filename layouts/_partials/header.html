@@ -1,7 +1,14 @@
 <header class="header">
   <a href="{{ site.BaseURL | relURL }}" class="header__title">{{ site.Title }}</a>
 
-  <button class="header__btn" data-sidebar="sidebar">
-    {{ partial "components/icon.html" (dict "name" "list" "class" "header__icon" "width" 24 "height" 24) }}
-  </button>
+  <div class="header__control">
+    <button class="header__btn" data-sidebar="view-control">
+      <span class="sr-only">Toggle View Controls</span>
+      {{ partial "components/icon.html" (dict "name" "gear" "width" 24 "height" 24) }}
+    </button>
+
+    <button class="header__btn" data-sidebar="sidebar">
+      {{ partial "components/icon.html" (dict "name" "list" "class" "header__icon" "width" 28 "height" 28) }}
+    </button>
+  </div>
 </header>
