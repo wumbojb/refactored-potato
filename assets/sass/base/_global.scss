@@ -47,11 +47,16 @@ html {
   display: grid;
   gap: 1rem;
 
-  &--col-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  &--fluid-sm {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
-  &--col-5 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  
+  &--fluid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  &--fluid-lg {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   @include b.min(md) {

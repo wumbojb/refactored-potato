@@ -1,0 +1,63 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
+
+.header {
+  @include m.flex-justify(space-between, center);
+  height: 4rem;
+  border-bottom: 1px solid var(--base-border);
+  box-shadow: var(--base-shadow);
+  padding-inline: 1.5em;
+
+  &__title {
+    font-size: v.$fs-10xl;
+    font-family: v.$font-serif;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 15em;
+  padding: 1em;
+
+  background-color: var(--second-bg);
+  border-right: 1px solid var(--base-border);
+}
+
+// BRAND 
+.brand {
+  @include m.flex-justify(center, center);
+  gap: 1em;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+
+  &__logo {
+    border-radius: 50%;
+  }
+
+  &__title {
+    color: var(--second-color);
+    font-size: v.$fs-10xl;
+
+  }
+}
+
+// NAVIGATION
+.nav {
+  display: grid;
+  margin-bottom: 1.5em;
+
+  &__label {
+    font-size: v.$fs-lg;
+    border-bottom: 1px solid var(--base-border);
+  }
+
+  &__link {
+    color: var(--primary);
+    display: flex;
+    gap: 0.5rem;
+  }
+}
