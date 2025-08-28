@@ -25,6 +25,7 @@
 
 <a href="{{ $href }}" 
    {{- with .Title }} title="{{ . }}"{{- end }}
-   {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}>
+   {{- if $isExternal }} target="_blank" rel="noopener noreferrer"{{- end }}
+   class="link">
    {{ .Text }}
 </a>

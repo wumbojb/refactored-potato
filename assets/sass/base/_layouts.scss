@@ -80,13 +80,14 @@
   &__label {
     font-size: v.$fs-lg;
     border-bottom: 1px solid var(--base-border);
+    margin-bottom: 0.5em;
   }
 
   &__link {
     color: var(--primary);
     display: flex;
     gap: 0.5rem;
-    padding: 0.15em;
+    padding: 0.17em;
     font-size: v.$fs-sm;
   }
 }
@@ -160,6 +161,27 @@
   padding: 1rem;
   box-shadow: var(--base-shadow);
   background-color: var(--second-bg);
+}
+
+.footer {
+  padding: 2em;
+
+  &__nav, &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+  }
+
+  &__nav {
+    font-size: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__copyright {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }
 
 // ========= END VIEW CONTROLS =========

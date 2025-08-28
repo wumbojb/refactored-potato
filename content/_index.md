@@ -32,22 +32,22 @@ Quis ad tempor consectetur nulla adipisicing sit exercitation do veniam voluptat
 {{< /tabpane >}}
 Consectetur irure aute consectetur [Callout](/callout/) ex ad ex cupidatat eiusmod tempor. Commodo cupidatat dolor exercitation duis commodo dolor. Consequat sit consequat sit occaecat amet id aute ex excepteur velit aute dolore nisi. Adipisicing aliqua ea amet culpa Lorem sit nulla dolor.
 
-# Hello World
+## Hello World
 
 {{< col col=col-2 >}}
-#### Title 1
+### Title 1
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
 
 <--->
 
-#### Title 2
+### Title 2
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
 
 <--->
 
-#### Title 3
+### Title 3
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s[^columntest]
 

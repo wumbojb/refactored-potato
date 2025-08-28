@@ -1,3 +1,76 @@
 <footer class="footer">
-  this is footer
+  {{ with site.Menus.social }}
+    <nav class="footer__nav">
+      <strong class="footer__label">Social Media: </strong>
+      {{- range . }}
+        <a href="{{ .URL }}" class="footer__social-link">
+          {{ with .Params.icon }}
+            {{ partial "components/icon.html" (dict "name" . "width" 16 "height" 16) }}
+          {{ end }}
+          {{ .Name }}
+        </a>
+      {{- end }}
+    </nav>
+  {{ end }}
+  <p class="footer__copyright" id="footer-message"></p>
+  <p class="footer__copyright">
+    &copy; {{ site.Title }} · {{ now.Year }} · All Rights Reserved
+  </p>
 </footer>
+<style>
+  #footer-message {
+    opacity: 0;
+    transition: opacity 0.8s ease; /* durasi animasi */
+  }
+  #footer-message.show {
+    opacity: 1;
+  }
+</style>
+<script>
+  const messages = [
+    {{- range $i, $msg := .Params.footerMessage | default site.Params.footerMessage -}}
+      "{{ $msg | safeJS }}"{{ if ne (add $i 1) (len site.Params.footerMessage) }},{{ end }}
+    {{- end -}}
+  ];
+  const footerMessage = document.getElementById("footer-message");
+  let index = 0;
+  function showMessage() {
+    footerMessage.classList.remove("show");
+    setTimeout(() => {
+      footerMessage.textContent = messages[index];
+      footerMessage.classList.add("show");
+      index = (index + 1) % messages.length;
+    }, 800);
+  }
+  showMessage();
+  setInterval(showMessage, 10000);
+</script>
+
+{{- if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+{{- end }}
+
+{{- if .Params.math | default site.Params.defaultMath | default false }}
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+  ></script>
+  <script>
+    MathJax = {
+      tex: {
+        displayMath: [
+          ["\\[", "\\]"],
+          ["$$", "$$"],
+        ], // block
+        inlineMath: [["\\(", "\\)"]], // inline
+      },
+      loader: {
+        load: ["ui/safe"],
+      },
+    };
+  </script>
+{{- end }}

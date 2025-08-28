@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as m;
 .figure {
   padding: 0.5em;
-  background-color: var(--third-bg);
+  background-color: var(--second-bg);
   width: fit-content;
   box-shadow: var(--base-shadow);
   border: 1px solid var(--base-border);
@@ -20,7 +20,7 @@
 
 .infobox {
   padding: 1em;
-  background-color: var(--third-bg);
+  background-color: var(--second-bg);
   box-shadow: var(--base-shadow);
   border: 1px solid var(--base-border);
   font-size: v.$fs-sm;
@@ -78,4 +78,26 @@
   &__input:checked + &__label + &__panel {
     display: flow-root;
   }
+}
+
+.search {
+  &__label {
+    @include m.flex-justify(center, center);
+    gap: 1em;
+    padding: 1em 1.5em;
+    border: 1px solid var(--second-border);
+    background-color: var(--second-bg);
+    border-radius: 0.25em;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    outline: none;
+  }
+}
+
+.results {
+  font-size: 16px;
 }

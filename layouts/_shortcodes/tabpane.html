@@ -18,11 +18,11 @@
 <div class="tabpane">
   {{- range $k, $v := $.Scratch.Get "tabs" }}
     {{- $tabId :=  printf "%v-%v" $tabpaneId $k }}
-    <input type="radio" name="{{ $tabpaneId }}" id="{{ $tabId }}" class="tabpane__input" tabindex="1"{{ if eq $k $checked }} checked="checked"{{ end }}>
+    <input type="radio" name="{{ $tabpaneId }}" id="{{ $tabId }}" class="tabpane__input" {{ if eq $k $checked }} checked="checked"{{ end }}>
     <label class="tabpane__label" for="{{ $tabId }}">
       {{ index $v "label" }}
     </label>
-    <div class="tabpane__panel" tabindex="1">
+    <div class="tabpane__panel" >
       {{ index $v "content" | $.Page.RenderString }}
     </div>
   {{- end }}

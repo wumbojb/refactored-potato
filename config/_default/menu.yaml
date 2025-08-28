@@ -14,19 +14,25 @@ main:
 social:
   - name: Twitter X
     url: https://example.com/
+    params: {icon: "twitter-x"}
     weight: 10
   - name: Instagram
     url: https://example.com/
+    params: {icon: "instagram"}
     weight: 20
   - name: Facebook
     url: https://example.com/
+    params: {icon: "facebook"}
     weight: 30
   - name: Discord
     url: https://example.com/
+    params: {icon: "discord"}
     weight: 40
   - name: Github
     url: https://example.com/
+    params: {icon: "github"}
     weight: 50
   - name: Rss Feed
     url: index.xml
+    params: {icon: "rss"}
     weight: 50
