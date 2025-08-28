@@ -11,6 +11,25 @@ Excepteur aliqua est in fugiat veniam nisi velit ipsum exercitation exercitation
 {{< /infobox >}}
 Irure sint sit nulla et. Consequat Lorem exercitation aliquip tempor pariatur aute incididunt officia laboris. Nisi mollit occaecat exercitation velit non do excepteur non.
 
+{{< tabpane >}}
+{{< tab label="Tab 1" >}}
+## Hello World
+Proident est consectetur incididunt dolore eu consequat quis Lorem veniam.
+{{< /tab >}}
+{{< tab label="Tab 2" selected="true" >}}
+## Hello World
+Ea occaecat dolore enim magna.
+{{< /tab >}}
+{{< tab label="Tab 3" >}}
+## Hello World
+Quis ad tempor consectetur nulla adipisicing sit exercitation do veniam voluptate.
+{{< /tab >}}
+{{< tab label="Tab 4" >}}
+## Hello World
+![Image](/images/testing.jpeg "Contoh Apa Ini Entahlah [Coba Google](https://google.com)|link=/images/testing.jpeg")
+Quis ad tempor consectetur nulla adipisicing sit exercitation do veniam voluptate.
+{{< /tab >}}
+{{< /tabpane >}}
 Consectetur irure aute consectetur [Callout](/callout/) ex ad ex cupidatat eiusmod tempor. Commodo cupidatat dolor exercitation duis commodo dolor. Consequat sit consequat sit occaecat amet id aute ex excepteur velit aute dolore nisi. Adipisicing aliqua ea amet culpa Lorem sit nulla dolor.
 
 # Hello World
@@ -24,6 +43,7 @@ Consectetur minim eu officia adipisicing veniam ad. Mollit culpa ut minim nisi l
 {{< /col >}}
 {{< /col-begin >}}
 In proident sint eiusmod occaecat do exercitation ullamco excepteur eu. Tempor ad est duis irure nostrud in fugiat culpa aliqua ullamco ex consectetur. Amet magna amet nulla reprehenderit.
+
 
 __Advertisement :)__
 

@@ -29,17 +29,18 @@ html {
   @include m.visually-hidden();
 }
 
+.float-right, .float-left {
+  margin-bottom: 1rem;
+}
 @include b.min(md) {
   .float-left {
     float: left;
     margin-right: 1rem;
-    margin-bottom: 1rem;
   }
 
   .float-right {
     float: right;
     margin-left: 1rem;
-    margin-bottom: 1rem;
   }
 }
 
