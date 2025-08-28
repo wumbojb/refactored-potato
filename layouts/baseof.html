@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}">
 <head>
+  {{ partial "head/inline-script" . }}
+  {{ partial "head/inline-css" . }}
+  {{ partial "head/meta" . }}
+  {{ partial "head/js" . }}
+  {{ partial "head/sass" . }}
 </head>
 <body>
-  {{ partial "mobile-header.html" . }}
-  {{ partial "sidebar.html" . }}
+  {{- partial "mobile-header.html" . }}
+  {{- partial "sidebar.html" . }}
   <main class="main">
-    {{ partial "view-control.html" . }}
-    {{ block "main" . }}{{ end }}
-    {{ partial "discussion.html" . }}
-    {{ partial "history.html" . }}
-    {{ partial "search.html" . }}
+    {{- partial "view-control.html" . }}
+    {{- block "main" . }}{{- end }}
+    {{- partial "discussion.html" . }}
+    {{- partial "history.html" . }}
+    {{- partial "search.html" . }}
   </main>
-  {{ partial "footer.html" . }}
+  {{- partial "footer.html" . }}
 </body>
 </html>
