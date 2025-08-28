@@ -1,0 +1,45 @@
+{{/* layouts/partials/icon.html */}}
+
+{{- $name := "" -}}
+{{- $class := "" -}}
+{{- $width := 16 -}}
+{{- $height := 16 -}}
+{{- $fill := "" -}}
+
+{{- if (reflect.IsMap .) -}}
+  {{- $name = .name -}}
+  {{- $class = .class | default "" -}}
+  {{- $width = .width | default 16 -}}
+  {{- $height = .height | default 16 -}}
+  {{- $fill = .fill | default "" -}}
+{{- else -}}
+  {{- $name = . -}}
+{{- end -}}
+
+{{- $path := printf "icons/%s.svg" $name -}}
+{{- with resources.Get $path | resources.Minify -}}
+  {{- $svg := .Content | safeHTML -}}
+
+  {{/* tambahin atribut dinamis */}}
+  {{- if $class }}
+    {{- $svg = $svg | replaceRE `<svg` (printf `<svg class="%s"` $class) -}}
+  {{- end -}}
+
+  {{- $svg = $svg 
+      | replaceRE `width="[^"]*"` (printf `width="%d"` $width) 
+      | replaceRE `height="[^"]*"` (printf `height="%d"` $height) 
+      | replaceRE `<svg` `<svg aria-hidden="true"` 
+  -}}
+
+  {{- if $fill }}
+    {{- if (findRE `fill="[^"]*"` $svg) }}
+      {{- $svg = $svg | replaceRE `fill="[^"]*"` (printf `fill="%s"` $fill) -}}
+    {{- else }}
+      {{- $svg = replace $svg "<svg" (printf "<svg fill=\"%s\"" $fill) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $svg | safeHTML -}}
+{{- else -}}
+  <!-- icon not found: {{$path}} -->
+{{- end -}}

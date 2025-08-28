@@ -1,0 +1,23 @@
+<article class="view-content" id="viewSearch">
+  <h1>Search</h1>
+  <div class="search" data-search="{{ "search.json" | relURL }}">
+    <label class="search__label">
+      <span class="sr-only">Search</span>
+      {{ partial "components/icon.html" (dict "name" "search" "class" "search__icon" "width" 24 "height" 24) }}
+      <input
+        type="search"
+        name="searchInput"
+        id="searchInput"
+        class="search__input"
+        placeholder="Search..."
+        autocomplete="off"
+      />
+    </label>
+  </div>
+
+  <div class="results" id="searchContainerResults" hidden>
+    <h1 class="results__label">Results</h1>
+    <br>
+    <ul id="results" aria-live="polite"></ul>
+  </div>
+</article>

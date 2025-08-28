@@ -1,0 +1,62 @@
+{{- /*  DISCUSSION DEACTIVE CLASS  */ -}}
+{{- $discussionFalse := (not (.Params.discussion | default site.Params.defaultDiscussion | default true)) -}}
+{{- $discussionClass := "" -}}
+{{- if $discussionFalse -}}
+  {{- $discussionClass = "view-control__btn--is-disable" -}}
+{{- end -}}
+
+{{- $repo := site.Params.ghrepo | default "user/repo" -}}
+{{- $branch := site.Params.branch | default "main" -}}
+{{- $repoBasePath := .Params.repoBasePath | default "content" -}}
+{{- $enableEdit := .Params.editPage | default site.Params.defaultEditPage | default true -}}
+
+<div class="view-control">
+  <button data-sidebar="view-control">
+    <span class="sr-only">Toggle View Controls</span>
+    ⚙️
+  </button>
+
+  <div class="view-control__group-btn" id="view-control">
+    <div class="view-control__col view-control__col--start">
+      <button class="view-control__btn view-control__btn--is-active" data-view="viewPage">Page</button>
+      <button class="view-control__btn {{ $discussionClass }}" data-view="viewDiscussion">Discussion</button>
+    </div>
+    <div class="view-control__col view-control__col--end">
+      <button class="view-control__btn" data-view="viewHistory">History</button>
+      {{ if $enableEdit }}
+        {{ with .File }}
+          <a 
+            href="https://github.com/{{- $repo -}}/blob/{{- $branch -}}/{{- $repoBasePath -}}/{{- .Path -}}?plain=1" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="view-control__btn"
+          >
+            View Source
+          </a>
+          <a 
+            href="https://github.com/{{- $repo -}}/edit/{{- $branch -}}/{{- $repoBasePath -}}/{{- .Path -}}?plain=1" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="view-control__btn"
+          >
+            Edit Page
+          </a>
+        {{ else }}
+          {{ template "disable_edit_page_button" . }}
+        {{ end }}
+      {{ else }}
+        {{ template "disable_edit_page_button" . }}
+      {{ end }}
+      <button class="view-control__btn" data-view="viewSearch">Search</button>
+    </div>
+  </div>
+</div>
+
+{{ define "disable_edit_page_button" }}
+  <button class="view-control__btn view-control__btn--is-disable" title="Source Not Found or Disable on This Page">
+    View Source
+  </button>
+  <button class="view-control__btn view-control__btn--is-disable" title="File Not Found or Disable on This Page">
+    Edit Page
+  </button>
+{{ end }}

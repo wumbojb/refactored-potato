@@ -6,10 +6,11 @@
   {{ partial "mobile-header.html" . }}
   {{ partial "sidebar.html" . }}
   <main class="main">
-    {{ partial "components/view-control.html" . }}
-    {{ .Content }}
-    {{ partial "components/discussion.html" . }}
-    {{ partial "components/history.html" . }}
+    {{ partial "view-control.html" . }}
+    {{ block "main" . }}{{ end }}
+    {{ partial "discussion.html" . }}
+    {{ partial "history.html" . }}
+    {{ partial "search.html" . }}
   </main>
   {{ partial "footer.html" . }}
 </body>

@@ -1,0 +1,15 @@
+{{/* Shortcode wrapper untuk partial icon.html */}}
+
+{{- $name := .Get "name" | default (.Get "0") -}}
+{{- $class := .Get "class" | default "" -}}
+{{- $width := .Get "width" | default 16 | int -}}
+{{- $height := .Get "height" | default 16 | int -}}
+{{- $fill := .Get "fill" | default "currentColor" -}}
+
+{{- partial "components/icon.html" (dict 
+  "name" $name 
+  "class" $class 
+  "width" $width 
+  "height" $height 
+  "fill" $fill
+) -}}
