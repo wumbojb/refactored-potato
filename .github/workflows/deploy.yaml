@@ -73,8 +73,11 @@ jobs:
       - name: Generate Dummy Markdown
         run: python3 _md_generator/article_dummy.py
       
-      - name: Generate Dummy Markdown
+      - name: Generate Dummy Markdown 2
         run: python3 _md_generator/zettel_dummy.py
+
+      - name: Convert Wikilinks
+        run: ./wikilink-converter
 
       - name: Build with Hugo
         run: |
