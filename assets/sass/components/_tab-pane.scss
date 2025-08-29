@@ -1,0 +1,50 @@
+.tabpane {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__label {
+    position: relative;
+    flex-shrink: 1;
+    padding: 0.5rem 1rem;
+    background-color: var(--second-bg);
+    border: solid 1px var(--base-border);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    cursor: pointer;
+    z-index: 999;
+    margin-left: -1px;
+    user-select: none;
+
+    &:first-of-type {
+      border-top-left-radius: 0.25em;
+      border-left-width: 1px;
+      margin-left: 0px;
+    }
+    &:last-of-type {
+      border-top-right-radius: 0.25em;
+      border-right-width: 1px;
+    }
+  }
+
+  &__panel {
+    order: 999;
+    display: none;
+    width: 100%;
+    margin-top: -1px;
+    padding: 1rem;
+    border: solid 1px var(--base-border);
+  }
+  &__input:checked + &__label {
+    background-color: var(--base-bg);
+    border-bottom: none;
+  }
+  &__input:checked + &__label + &__panel {
+    display: flow-root;
+  }
+}

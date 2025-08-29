@@ -1,0 +1,10 @@
+.infobox {
+  padding: 1em;
+  background-color: var(--second-bg);
+  box-shadow: var(--base-shadow);
+  border: 1px solid var(--base-border);
+  font-size: v.$fs-sm;
+  color: var(--third-color);
+  display: grid;
+  gap: 1em;
+}

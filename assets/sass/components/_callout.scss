@@ -1,0 +1,25 @@
+.callout {
+  border: 1px solid var(--callout-border);
+  background-color: var(--callout-bg);
+  display: flow-root;
+  margin: 1em;
+  box-shadow: var(--base-shadow);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    border-block-end: 1px solid var(--callout-border);
+    margin-block-end: -1px;
+    color: var(--callout-color);
+  }
+
+  &__title {
+    color: var(--callout-color);
+  }
+
+  &__body {
+    padding: 1em;
+  }
+}
