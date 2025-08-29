@@ -31,7 +31,8 @@ html {
 
 .float-right, 
 .float-left {
-  margin-bottom: 1rem;
+  margin-block: 1.5em 1em;
+  margin-inline: auto;
 }
 
 @include b.min(md) {

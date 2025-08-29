@@ -2,13 +2,18 @@
 title: Home
 ---
 
-Non aliqua aliqua do pariatur occaecat reprehenderit tempor qui. Laborum ullamco minim nulla deserunt nulla Lorem fugiat quis consequat nulla amet. Pariatur est incididunt officia deserunt voluptate ipsum ut fugiat dolor consectetur esse duis. Eiusmod ipsum id dolore duis reprehenderit in duis id elit magna ex veniam nostrud. Occaecat Lorem proident sint dolor eiusmod. Pariatur enim ad do in laborum quis Lorem et ut.
-
 {{< infobox float=right width=360 image=`![Image](/images/testing.jpeg "Contoh Apa Ini Entahlah [Coba Google](https://google.com)|link=/images/testing.jpeg")` >}}
 
 Excepteur aliqua est in fugiat veniam nisi velit ipsum exercitation exercitation et fugiat tempor fugiat. Non irure exercitation eu cupidatat eiusmod dolore nisi pariatur aute anim amet aliquip duis mollit. Amet cupidatat qui adipisicing ea eu aliquip id in in cupidatat magna mollit.
 
 {{< /infobox >}}
+
+Non aliqua aliqua do pariatur occaecat reprehenderit tempor qui. Laborum ullamco minim nulla deserunt nulla Lorem fugiat quis consequat nulla amet. Pariatur est incididunt officia deserunt voluptate ipsum ut fugiat dolor consectetur esse duis. Eiusmod ipsum id dolore duis reprehenderit in duis id elit magna ex veniam nostrud. Occaecat Lorem proident sint dolor eiusmod. Pariatur enim ad do in laborum quis Lorem et ut.
+
+Fugiat duis ut commodo ad ipsum non laborum anim eiusmod nulla incididunt consequat velit id. Id ea cupidatat laborum eu laboris anim tempor. Elit qui reprehenderit ea deserunt consequat ad officia tempor adipisicing. Anim excepteur nisi aliquip ut duis qui aute commodo sunt cillum do non dolor.
+
+{{< toc >}}
+
 Irure sint sit nulla et. Consequat Lorem exercitation aliquip tempor pariatur aute incididunt officia laboris. Nisi mollit occaecat exercitation velit non do excepteur non.
 
 {{< tabpane >}}
@@ -50,6 +55,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ### Title 3
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s[^columntest]
+
+[^columntest]: Footnote **can have markup**
+
 
 {{< /col >}}
 

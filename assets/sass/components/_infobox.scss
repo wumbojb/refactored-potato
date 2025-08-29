@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as v;
+
 .infobox {
   padding: 1em;
   background-color: var(--second-bg);
